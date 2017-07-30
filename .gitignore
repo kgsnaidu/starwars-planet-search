@@ -10,7 +10,7 @@
 /build
 
 # editor files
-/.vscode
+.vscode/*
 
 # misc
 .DS_Store
