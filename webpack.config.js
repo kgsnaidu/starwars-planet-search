@@ -1,21 +1,24 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+
     target: 'web',
 
     context: __dirname,
 
-    entry: path.resolve( __dirname, './src/index.js' ),
+    entry: path.resolve(__dirname, './src/index.js'),
 
     output: {
-        filename: 'bundle.js',
-        path: path.resolve( __dirname, '/build' ),
-        publicPath: '/public/js'
+        filename: 'js/bundle.js',
+        path: path.resolve(__dirname, 'dist/'),
+        publicPath: '/'
     },
 
     module: {
 
-        rules: [ 
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -24,7 +27,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
-            } 
+            }
         ]
     },
 
@@ -32,15 +35,23 @@ module.exports = {
         contentBase: path.join(__dirname, "public"),
         compress: true,
         port: 8000,
-        clientLogLevel: 'error'
+        inline: true,
+        historyApiFallback: true,
+        hot: true,
+        overlay: true,
+        clientLogLevel: 'info'
     },
 
     plugins: [
-        
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: path.join(__dirname, 'public', 'index.html'),
+        })
     ],
 
     resolve: {
-        extensions: [ ".js", ".json", ".jsx", ".css" ]
+        extensions: [".js", ".json", ".jsx", ".css"]
     },
 
     stats: "minimal"
