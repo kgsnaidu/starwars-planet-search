@@ -12,11 +12,11 @@ const LoggedIn = () => {
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path='/' render={() => (
+            <Route exact path='/' render={(props) => (
                 LoggedIn() ? (
-                    <HomePage />
+                    <HomePage {...props} />
                 ) : (
-                    <Redirect to='/login' />
+                    <Redirect to='/login' {...props} />
                 ))}>
             </Route>
             <Route path='/login' component={LoginPage} />

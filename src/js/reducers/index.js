@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import login from './login'
+import login from './login';
+import search from './search';
 
 const Reducers = combineReducers({
-    login
+    login,
+    search
 });
 
 export default Reducers;
