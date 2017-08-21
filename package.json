@@ -1,5 +1,5 @@
 {
-  "name": "xebia-assignment",
+  "name": "starwars-planet-search",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,10 +13,10 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server",
+    "build": "",
+    "test": "",
+    "eject": ""
   },
   "main": "index.js",
   "repository": {
@@ -24,7 +24,12 @@
     "url": "git+https://github.com/naniaryan/starwars-planet-search.git"
   },
   "keywords": [
-    "starwars"
+    "starwars",
+    "react",
+    "es6",
+    "JavaScript",
+    "react-router",
+    "redux"
   ],
   "author": "Gowri Sankara Naidu (NaniAryan)",
   "license": "ISC",
