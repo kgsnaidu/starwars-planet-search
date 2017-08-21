@@ -1,5 +1,25 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    padding-top: 70px;
+}
+
+.login-page .title {
+    text-align: center;
+}
+
+.planet img {
+    height: 150px;
+    width: 150px;
+    display: block;
+}
+
+.planet .planet-name {
+    text-align: center;
+}
+
+.planet .actions {
+    text-align: center;
+}
+
+.search-container .results-label {
+    padding-bottom: 20px;
 }

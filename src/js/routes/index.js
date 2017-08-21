@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router';
-import LoginPage from './js/pages/LoginPage';
-import HomePage from './js/pages/HomePage';
+import LoginPage from '../pages/login-page';
+import HomePage from '../pages/home-page';
 import Cookies from 'js-cookie';
 
 const LoggedIn = () => {
@@ -12,11 +12,11 @@ const LoggedIn = () => {
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path='/' render={() => (
+            <Route exact path='/' render={(props) => (
                 LoggedIn() ? (
-                    <HomePage />
+                    <HomePage {...props} />
                 ) : (
-                    <Redirect to='/login' />
+                    <Redirect to='/login' {...props} />
                 ))}>
             </Route>
             <Route path='/login' component={LoginPage} />
